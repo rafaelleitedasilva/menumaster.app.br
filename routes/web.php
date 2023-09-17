@@ -13,6 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+
+
+Route::get('/', function(){
+    return redirect('/construction');
+});
+
+Route::get('/construction', function () {
+    return view('construction');
+})->name('construction');
+
+Route::get('/{name}', function(){
+    return redirect()->route('construction');
 });
